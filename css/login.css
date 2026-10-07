@@ -1,0 +1,345 @@
+/* ==========================================================================
+   Euodoo To Do List - Login Page Stylesheet
+   Pure CSS3 - Modern, clean, responsive SaaS login styling
+   ========================================================================== */
+
+:root {
+  /* Surface & Background */
+  --bg-page: #f4f6f8;
+  --bg-card: #ffffff;
+
+  /* Brand & Accents */
+  --color-logo-blue: #2563eb;
+  --color-pill-bg: #fff2eb;
+  --color-pill-text: #d96522;
+  --color-cyan-btn: #0098da;
+  --color-cyan-btn-hover: #0085bf;
+  --color-cyan-btn-active: #0073a6;
+
+  /* Typography Colors */
+  --color-heading: #111827;
+  --color-label: #374151;
+  --color-text: #1f2937;
+  --color-placeholder: #9ca3af;
+  --color-muted: #6b7280;
+
+  /* Borders & States */
+  --color-border: #e2e8f0;
+  --color-border-focus: #3b82f6;
+  --color-error: #ef4444;
+  --color-error-focus: #dc2626;
+
+  /* Dimensions */
+  --card-max-width: 430px;
+  --card-radius: 20px;
+  --input-height: 45px;
+  --input-radius: 10px;
+  --btn-height: 48px;
+  --btn-radius: 10px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --shadow-btn: 0 4px 14px rgba(0, 152, 218, 0.32);
+  --shadow-btn-hover: 0 6px 18px rgba(0, 152, 218, 0.4);
+
+  /* Fonts */
+  --font-stack: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--bg-page);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Layout */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* Login Card */
+.login-card {
+  width: 100%;
+  max-width: var(--card-max-width);
+  background-color: var(--bg-card);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  padding: 38px 36px 36px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+/* Top Branding */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.logo-box {
+  width: 54px;
+  height: 54px;
+  background-color: var(--color-logo-blue);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.logo-letter {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+.category-pill {
+  margin-top: 10px;
+  background-color: var(--color-pill-bg);
+  border-radius: 9999px;
+  padding: 3px 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-pill span {
+  color: var(--color-pill-text);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  user-select: none;
+}
+
+/* Heading */
+.page-heading {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-heading);
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.password-group {
+  margin-bottom: 0;
+}
+
+.form-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-label);
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.required-star {
+  color: var(--color-error);
+  margin-left: 3px;
+  font-weight: 700;
+}
+
+.form-input {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-text);
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--input-radius);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input::placeholder {
+  font-family: var(--font-stack);
+  color: var(--color-placeholder);
+  font-size: 14px;
+  letter-spacing: normal;
+}
+
+.form-input:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* Error state applied via JS */
+.form-input.has-error {
+  border-color: var(--color-error) !important;
+  background-color: #ffffff !important;
+}
+
+.form-input.has-error:focus {
+  border-color: var(--color-error-focus) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Error messages */
+.error-message {
+  display: none;
+  color: var(--color-error);
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 6px;
+  margin-bottom: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+/* Password Input Container */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-input {
+  font-family: var(--font-stack);
+  padding-right: 50px;
+  letter-spacing: normal;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-heading);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Forgot Password */
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 22px;
+}
+
+.forgot-password-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.forgot-password-link:hover {
+  color: var(--color-heading);
+  text-decoration: underline;
+}
+
+/* Sign In Button */
+.submit-btn {
+  width: 100%;
+  height: var(--btn-height);
+  background-color: var(--color-cyan-btn);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15.5px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2px;
+}
+
+.submit-btn:hover {
+  background-color: var(--color-cyan-btn-hover);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+.submit-btn:active {
+  transform: scale(0.985);
+  background-color: var(--color-cyan-btn-active);
+  box-shadow: 0 2px 6px rgba(0, 152, 218, 0.25);
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid var(--color-cyan-btn);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-page {
+    padding: 20px 14px;
+  }
+
+  .login-card {
+    width: 92%;
+    padding: 30px 22px 28px;
+    border-radius: 18px;
+  }
+
+  .page-heading {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
